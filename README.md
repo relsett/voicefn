@@ -17,7 +17,8 @@ English and Russian interface; dozens of dictation languages.
 
 ## Install
 
-[Mac App Store](https://apps.apple.com/app/id6831041413) · macOS 14 or later, Apple silicon recommended.
+Download `VoiceFn-1.0.0.dmg` from [Releases](https://github.com/relsett/voicefn/releases/latest), open it and drag VoiceFn to Applications.
+macOS 14 or later, Apple silicon recommended. The app is signed and notarized by Apple.
 
 ## Build from source
 
