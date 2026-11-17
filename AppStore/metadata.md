@@ -66,7 +66,7 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 VoiceFn is a menu bar app (no Dock icon). Click the fn key icon in the menu bar → Settings.
 
 1. Grant Microphone and Keyboard access when asked (the keyboard permissions are Post Event and
-   Listen Event, used to notice the fn key and paste with ⌘V). macOS applies the keyboard grant after
+   Listen Event, used to notice the dictation key and paste with ⌘V). macOS applies the keyboard grant after
    a relaunch; the app offers a Relaunch button for that.
 2. Press fn (or right Option, chosen in Settings → Key), say a sentence, press fn again. The text is
    pasted into the frontmost text field.
@@ -77,3 +77,11 @@ About com.apple.security.network.server: it is used only for OpenRouter sign-in 
 a model under OpenRouter → Connect). The app opens a temporary listener on 127.0.0.1 to receive the OAuth
 PKCE redirect (RFC 8252 loopback), accepts that single request and closes within 3 minutes. Without it
 the sandbox denies the bind and sign-in fails. No other incoming connections are accepted.
+
+About Accessibility (guideline 2.4.5): VoiceFn is a voice input method, an alternative to the keyboard for
+people who can't type or for whom typing is painful (motor impairments, RSI, tremor). macOS lists two of its
+permissions under Privacy & Security: Input Monitoring (CGRequestListenEventAccess), to notice the dictation
+key, and Accessibility (CGRequestPostEventAccess), to post a single ⌘V so the dictated text reaches the
+focused text field, as macOS Dictation and Voice Control do. Before pasting it checks only that the focused
+element is an editable, non-secure text field; it never reads field contents, other windows or anything
+else. If Accessibility is not granted, the text stays on the clipboard for the user to paste.

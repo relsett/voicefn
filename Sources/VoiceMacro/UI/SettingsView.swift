@@ -176,11 +176,11 @@ struct SettingsView: View {
     }
 
     private var missingPermission: (text: LocalizedStringKey, action: LocalizedStringKey, request: () -> Void)? {
-        if !model.microphoneGranted { return ("VoiceFn needs microphone access", "Allow", model.requestMicrophone) }
+        if !model.microphoneGranted { return ("VoiceFn needs microphone access", "Continue", model.requestMicrophone) }
         if !model.accessibilityGranted {
             return model.accessNeedsRelaunch
                 ? ("VoiceFn needs keyboard access", "Relaunch", model.relaunch)
-                : ("VoiceFn needs keyboard access", "Allow", model.requestAccessibility)
+                : ("VoiceFn needs keyboard access", "Continue", model.requestAccessibility)
         }
         return nil
     }

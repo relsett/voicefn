@@ -31,16 +31,6 @@
         }
       }
     },
-    "Allow": {
-      "localizations": {
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Разрешить"
-          }
-        }
-      }
-    },
     "Allow microphone access in System Settings.": {
       "localizations": {
         "ru": {
@@ -1341,12 +1331,12 @@
         }
       }
     },
-    "to catch fn and paste text": {
+    "to type for you": {
       "localizations": {
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "чтобы ловить fn и вставлять текст"
+            "value": "чтобы печатать за вас"
           }
         }
       }

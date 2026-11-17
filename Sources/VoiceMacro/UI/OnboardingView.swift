@@ -130,9 +130,9 @@ struct OnboardingView: View {
             VStack(spacing: 10) {
                 permissionRow("Microphone", detail: "to hear you", symbol: "mic.fill",
                               granted: model.microphoneGranted) { model.requestMicrophone() }
-                permissionRow("Keyboard", detail: "to catch fn and paste text", symbol: "keyboard.fill",
+                permissionRow("Keyboard", detail: "to type for you", symbol: "keyboard.fill",
                               granted: model.accessibilityGranted,
-                              action: model.accessNeedsRelaunch ? "Relaunch" : "Allow") {
+                              action: model.accessNeedsRelaunch ? "Relaunch" : "Continue") {
                     if model.accessNeedsRelaunch { model.relaunch() } else { model.requestAccessibility() }
                 }
             }
@@ -266,7 +266,7 @@ struct OnboardingView: View {
     }
 
     private func permissionRow(_ title: LocalizedStringKey, detail: LocalizedStringKey, symbol: String,
-                               granted: Bool, action: LocalizedStringKey = "Allow",
+                               granted: Bool, action: LocalizedStringKey = "Continue",
                                request: @escaping () -> Void) -> some View {
         HStack(spacing: 14) {
             Image(systemName: symbol)
