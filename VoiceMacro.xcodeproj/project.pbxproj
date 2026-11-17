@@ -1,0 +1,29 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 77;
+    objects = {
+        A00000000000000000000001 = { isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2700; }; buildConfigurationList = A00000000000000000000002; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; knownRegions = (en, Base, ru); mainGroup = A00000000000000000000003; packageReferences = (A00000000000000000000020); productRefGroup = A00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (A00000000000000000000005); };
+        A00000000000000000000002 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000010, A00000000000000000000011); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        A00000000000000000000003 = { isa = PBXGroup; children = (A00000000000000000000006, A00000000000000000000014, A00000000000000000000004); sourceTree = "<group>"; };
+        A00000000000000000000004 = { isa = PBXGroup; children = (A00000000000000000000007); name = Products; sourceTree = "<group>"; };
+        A00000000000000000000005 = { isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000008; buildPhases = (A00000000000000000000009, A0000000000000000000000A, A0000000000000000000000B); buildRules = (); dependencies = (); fileSystemSynchronizedGroups = (A00000000000000000000006); name = VoiceMacro; packageProductDependencies = (A00000000000000000000021); productName = "VoiceFn"; productReference = A00000000000000000000007; productType = "com.apple.product-type.application"; };
+        A00000000000000000000006 = { isa = PBXFileSystemSynchronizedRootGroup; path = Sources/VoiceMacro; sourceTree = "<group>"; };
+        A00000000000000000000007 = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceFn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+        A00000000000000000000008 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000012, A00000000000000000000013); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        A00000000000000000000009 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+        A0000000000000000000000A = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000022); runOnlyForDeploymentPostprocessing = 0; };
+        A0000000000000000000000B = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000015); runOnlyForDeploymentPostprocessing = 0; };
+        A00000000000000000000014 = { isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Resources/AppIcon.icon; sourceTree = "<group>"; };
+        A00000000000000000000015 = { isa = PBXBuildFile; fileRef = A00000000000000000000014; };
+        A00000000000000000000020 = { isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/argmaxinc/argmax-oss-swift.git"; requirement = { kind = exactVersion; version = 1.1.1; }; };
+        A00000000000000000000021 = { isa = XCSwiftPackageProductDependency; package = A00000000000000000000020; productName = WhisperKit; };
+        A00000000000000000000022 = { isa = PBXBuildFile; productRef = A00000000000000000000021; };
+        A00000000000000000000010 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; }; };
+        A00000000000000000000011 = { isa = XCBuildConfiguration; name = Release; buildSettings = { SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; }; };
+        A00000000000000000000012 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { PRODUCT_NAME = "VoiceFn"; PRODUCT_MODULE_NAME = VoiceMacro; PRODUCT_BUNDLE_IDENTIFIER = com.relsett.voicemacro; INFOPLIST_FILE = Resources/Info.plist; CODE_SIGN_ENTITLEMENTS = Resources/VoiceMacro.entitlements; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; SWIFT_EMIT_LOC_STRINGS = YES; CODE_SIGN_IDENTITY = "Apple Development"; CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = GX2UMT3PY7; ENABLE_HARDENED_RUNTIME = YES; ENABLE_APP_SANDBOX = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; ENABLE_TESTABILITY = YES; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; }; };
+        A00000000000000000000013 = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_NAME = "VoiceFn"; PRODUCT_MODULE_NAME = VoiceMacro; PRODUCT_BUNDLE_IDENTIFIER = com.relsett.voicemacro; INFOPLIST_FILE = Resources/Info.plist; CODE_SIGN_ENTITLEMENTS = Resources/VoiceMacro.entitlements; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; SWIFT_EMIT_LOC_STRINGS = YES; CODE_SIGN_IDENTITY = "Apple Development"; CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = GX2UMT3PY7; ENABLE_HARDENED_RUNTIME = YES; ENABLE_APP_SANDBOX = YES; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_COMPILATION_MODE = wholemodule; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; }; };
+    };
+    rootObject = A00000000000000000000001;
+}

@@ -1,0 +1,59 @@
+{{define "content"}}
+<h1>Privacy Policy</h1>
+<p class="muted">Updated November 7, 2026</p>
+
+<p>VoiceFn has no accounts, no ads and no tracking. This page lists everything that leaves your Mac and why.</p>
+
+<h2>Your voice</h2>
+<p>What happens to a recording depends on the recognition you choose in Settings:</p>
+<ul>
+  <li><strong>On This Mac</strong> (the default). Speech is recognized by a model running on your Mac.
+    Audio and text never leave it.</li>
+  <li><strong>OpenRouter</strong> (your own account). The recording goes directly from your Mac to OpenRouter
+    and the model provider you picked, under your OpenRouter account and its policies. We never see it.</li>
+</ul>
+
+<h2>Usage statistics</h2>
+<p>If “Share Anonymous Usage Statistics” is on, the app sends anonymous events (for example: the app started,
+a dictation succeeded or failed and why, which recognition was used) to Aptabase, hosted in the EU.
+They never include audio, text, app names or anything that identifies you. You can turn this off in Settings.</p>
+
+<h2>On your Mac</h2>
+<p>Dictation history, and recordings if you keep them, are stored only on your Mac inside the app's
+container. You can delete them in Dictation History at any time.</p>
+
+<h2>Permissions</h2>
+<p>The microphone is used only while you dictate. Keyboard access is used only to notice the fn key
+(or your shortcut) and to paste the text.</p>
+
+<h2>Children</h2>
+<p>VoiceFn is not directed at children and does not knowingly collect their data.</p>
+
+<h2>Contact</h2>
+<p>{{if .Email}}<a href="mailto:{{.Email}}">{{.Email}}</a>{{else}}See <a href="/support">Support</a>.{{end}}</p>
+
+<hr>
+
+<div lang="ru">
+<h1>Политика конфиденциальности</h1>
+<p>В VoiceFn нет аккаунтов, рекламы и слежки. Здесь перечислено всё, что покидает ваш Mac, и зачем.</p>
+
+<h2>Ваш голос</h2>
+<ul>
+  <li><strong>На этом Mac</strong> (по умолчанию). Речь распознаёт модель на вашем Mac. Звук и текст никуда не уходят.</li>
+  <li><strong>OpenRouter</strong> (ваш аккаунт). Запись идёт прямо с Mac в OpenRouter и выбранную модель по правилам
+    вашего аккаунта OpenRouter. Мы её не видим.</li>
+</ul>
+
+<h2>Статистика</h2>
+<p>Если включено «Отправлять анонимную статистику», приложение отправляет в Aptabase (серверы в ЕС) анонимные события:
+запуск, успех или ошибка диктовки, какое распознавание выбрано. Без звука, текста, названий приложений и всего,
+что вас идентифицирует. Выключается в настройках.</p>
+
+<h2>На вашем Mac</h2>
+<p>История диктовок и записи, если вы их храните, лежат только на вашем Mac. Удалить их можно в истории диктовок.</p>
+
+<h2>Связь</h2>
+<p>{{if .Email}}<a href="mailto:{{.Email}}">{{.Email}}</a>{{else}}См. <a href="/support">Поддержка</a>.{{end}}</p>
+</div>
+{{end}}

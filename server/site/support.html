@@ -1,0 +1,27 @@
+{{define "content"}}
+<h1>Support</h1>
+<p>Questions, bugs or ideas: {{if .Email}}<a href="mailto:{{.Email}}">{{.Email}}</a>{{else}}write to us through the App Store page{{end}}.</p>
+
+<h2>fn does nothing</h2>
+<p>Open VoiceFn Settings. If it asks for keyboard access, press Allow, switch VoiceFn on in System Settings
+and press Relaunch if it appears. If fn also switches your keyboard language, choose Right ⌥ as the key
+or turn that off in Keyboard Settings.</p>
+
+<h2>The text isn't pasted</h2>
+<p>The text is still on the clipboard; press ⌘V. Keyboard access lets VoiceFn paste for you.</p>
+
+<hr>
+
+<div lang="ru">
+<h1>Поддержка</h1>
+<p>Вопросы, ошибки, идеи: {{if .Email}}<a href="mailto:{{.Email}}">{{.Email}}</a>{{else}}напишите через страницу в App Store{{end}}.</p>
+
+<h2>fn ничего не делает</h2>
+<p>Откройте настройки VoiceFn. Если просит доступ к клавиатуре — «Разрешить», включите VoiceFn в системных
+настройках и нажмите «Перезапустить», если появится. Если fn ещё и переключает язык, выберите правый ⌥
+или отключите это в настройках клавиатуры.</p>
+
+<h2>Текст не вставился</h2>
+<p>Он остаётся в буфере обмена — нажмите ⌘V. Доступ к клавиатуре нужен, чтобы VoiceFn вставлял сам.</p>
+</div>
+{{end}}

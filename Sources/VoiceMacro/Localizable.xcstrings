@@ -1,0 +1,1366 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ key": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клавиша %@"
+          }
+        }
+      }
+    },
+    "5-minute limit reached. The recording is saved.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Достигнут лимит 5 минут. Запись сохранена."
+          }
+        }
+      }
+    },
+    "API": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API"
+          }
+        }
+      }
+    },
+    "Allow": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешить"
+          }
+        }
+      }
+    },
+    "Allow microphone access in System Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешите доступ к микрофону в Системных настройках."
+          }
+        }
+      }
+    },
+    "Already recording.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись уже идёт."
+          }
+        }
+      }
+    },
+    "Audio in Chat": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Аудио в чате"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отмена"
+          }
+        }
+      }
+    },
+    "Cancel recording": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить запись"
+          }
+        }
+      }
+    },
+    "Cancelled.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменено."
+          }
+        }
+      }
+    },
+    "Choose a key together with Control, Option, or Command.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите клавишу вместе с Control, Option или Command."
+          }
+        }
+      }
+    },
+    "Choose a model in Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите модель в настройках."
+          }
+        }
+      }
+    },
+    "Clear History…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Очистить журнал…"
+          }
+        }
+      }
+    },
+    "Click to copy": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите, чтобы скопировать"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрыть"
+          }
+        }
+      }
+    },
+    "Connect": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подключить"
+          }
+        }
+      }
+    },
+    "Connect OpenRouter in Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подключите OpenRouter в настройках."
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продолжить"
+          }
+        }
+      }
+    },
+    "Copied": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировано"
+          }
+        }
+      }
+    },
+    "Copied. Allow keyboard access in Settings to paste automatically.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировано. Разрешите доступ к клавиатуре в настройках, чтобы текст вставлялся сам."
+          }
+        }
+      }
+    },
+    "Copied. Press ⌘V to paste.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировано. Нажмите ⌘V, чтобы вставить."
+          }
+        }
+      }
+    },
+    "Copy": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать"
+          }
+        }
+      }
+    },
+    "Couldn’t change Open at Login: %@": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось изменить автозапуск: %@"
+          }
+        }
+      }
+    },
+    "Couldn’t confirm the OpenRouter sign-in. Try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось подтвердить вход в OpenRouter. Попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "Couldn’t listen for the shortcut (%d).": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось отслеживать сочетание (%d)."
+          }
+        }
+      }
+    },
+    "Couldn’t open the macOS Keychain (%d).": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось открыть Связку ключей macOS (%d)."
+          }
+        }
+      }
+    },
+    "Couldn’t open the sign-in page. Try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось открыть страницу входа. Попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "Couldn’t save the recording: %@": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось сохранить запись: %@"
+          }
+        }
+      }
+    },
+    "Custom Shortcut": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Своё сочетание"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить"
+          }
+        }
+      }
+    },
+    "Delete All": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить всё"
+          }
+        }
+      }
+    },
+    "Delete all dictations?": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить все диктовки?"
+          }
+        }
+      }
+    },
+    "Dictation History": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Журнал диктовок"
+          }
+        }
+      }
+    },
+    "Disconnect": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отключить"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
+          }
+        }
+      }
+    },
+    "Don’t Show Again": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Больше не показывать"
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скачать"
+          }
+        }
+      }
+    },
+    "Downloading Model": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузка модели"
+          }
+        }
+      }
+    },
+    "Everything you dictate appears here.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Здесь появится всё, что вы продиктуете."
+          }
+        }
+      }
+    },
+    "Get Started": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начать"
+          }
+        }
+      }
+    },
+    "Getting ready": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почти готово"
+          }
+        }
+      }
+    },
+    "Hello, how are you?": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Привет, как дела?"
+          }
+        }
+      }
+    },
+    "History": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Журнал"
+          }
+        }
+      }
+    },
+    "It works": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получилось"
+          }
+        }
+      }
+    },
+    "Keep Audio Recordings": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранять аудиозаписи"
+          }
+        }
+      }
+    },
+    "Kept only on this Mac.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хранится только на этом Mac."
+          }
+        }
+      }
+    },
+    "Key": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клавиша"
+          }
+        }
+      }
+    },
+    "Keyboard": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клавиатура"
+          }
+        }
+      }
+    },
+    "Keyboard Settings": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки клавиатуры"
+          }
+        }
+      }
+    },
+    "Later": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Позже"
+          }
+        }
+      }
+    },
+    "Microphone": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Микрофон"
+          }
+        }
+      }
+    },
+    "Model Didn’t Load": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель не загрузилась"
+          }
+        }
+      }
+    },
+    "Model ID": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID модели"
+          }
+        }
+      }
+    },
+    "Model Not Downloaded": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель не скачана"
+          }
+        }
+      }
+    },
+    "No speech recognized.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Речь не распознана."
+          }
+        }
+      }
+    },
+    "Not transcribed": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не распознано"
+          }
+        }
+      }
+    },
+    "Nothing found.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ничего не найдено."
+          }
+        }
+      }
+    },
+    "Nothing happens when you press fn?": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ничего не происходит при нажатии fn?"
+          }
+        }
+      }
+    },
+    "Nothing to transcribe.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нечего распознавать."
+          }
+        }
+      }
+    },
+    "On This Mac": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На этом Mac"
+          }
+        }
+      }
+    },
+    "Open at Login": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запускать при входе"
+          }
+        }
+      }
+    },
+    "OpenRouter error (HTTP %lld). Check the model and try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка OpenRouter (HTTP %lld). Проверьте модель и попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "OpenRouter rate limit. Wait a moment and try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лимит запросов OpenRouter. Подождите и попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "OpenRouter refused access. Reconnect in Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenRouter отклонил доступ. Подключитесь заново в настройках."
+          }
+        }
+      }
+    },
+    "OpenRouter sent an unexpected response. Try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenRouter вернул неожиданный ответ. Попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "OpenRouter’s response is too large.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ответ OpenRouter слишком большой."
+          }
+        }
+      }
+    },
+    "Other…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Другая…"
+          }
+        }
+      }
+    },
+    "Pasted": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вставлено"
+          }
+        }
+      }
+    },
+    "Preparing Model…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка модели…"
+          }
+        }
+      }
+    },
+    "Preparing the speech model…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готовлю модель распознавания…"
+          }
+        }
+      }
+    },
+    "Press %@ to dictate": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите %@, чтобы диктовать"
+          }
+        }
+      }
+    },
+    "Press %@, say something, then press it again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите %@, скажите что-нибудь и нажмите ещё раз."
+          }
+        }
+      }
+    },
+    "Press fn and speak": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите fn и говорите"
+          }
+        }
+      }
+    },
+    "Press fn to dictate": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите fn, чтобы диктовать"
+          }
+        }
+      }
+    },
+    "Press fn, say something, then press fn again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите fn, скажите что-нибудь и нажмите fn ещё раз."
+          }
+        }
+      }
+    },
+    "Press it again, and the text appears where your cursor is.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите ещё раз — текст появится там, где стоит курсор."
+          }
+        }
+      }
+    },
+    "Press keys… Esc cancels": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите сочетание… Esc — отмена"
+          }
+        }
+      }
+    },
+    "Quit VoiceFn": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выйти из VoiceFn"
+          }
+        }
+      }
+    },
+    "Ready": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готов"
+          }
+        }
+      }
+    },
+    "Recent": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавние"
+          }
+        }
+      }
+    },
+    "Recognition": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознавание"
+          }
+        }
+      }
+    },
+    "Recording": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись"
+          }
+        }
+      }
+    },
+    "Recording saved": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись сохранена"
+          }
+        }
+      }
+    },
+    "Recording saved. Send it or delete it.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись сохранена. Отправьте или удалите её."
+          }
+        }
+      }
+    },
+    "Recording, %@": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись, %@"
+          }
+        }
+      }
+    },
+    "Relaunch": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перезапустить"
+          }
+        }
+      }
+    },
+    "Retry": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторить"
+          }
+        }
+      }
+    },
+    "Right ⌥": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правый ⌥"
+          }
+        }
+      }
+    },
+    "Screen locked. The recording is saved.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Экран заблокирован. Запись сохранена."
+          }
+        }
+      }
+    },
+    "Search": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск"
+          }
+        }
+      }
+    },
+    "Sending stopped. The recording is saved.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправка остановлена. Запись сохранена."
+          }
+        }
+      }
+    },
+    "Settings…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки…"
+          }
+        }
+      }
+    },
+    "Share Anonymous Usage Statistics": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправлять анонимную статистику"
+          }
+        }
+      }
+    },
+    "Shortcut": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сочетание"
+          }
+        }
+      }
+    },
+    "Show Audio in Finder": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать аудио в Finder"
+          }
+        }
+      }
+    },
+    "Sign-in timed out. Try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Время входа истекло. Попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "Speech to Text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознавание речи"
+          }
+        }
+      }
+    },
+    "Starting…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включаю…"
+          }
+        }
+      }
+    },
+    "System Default": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Системный"
+          }
+        }
+      }
+    },
+    "Texts and saved audio are deleted permanently.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тексты и сохранённое аудио будут удалены навсегда."
+          }
+        }
+      }
+    },
+    "The microphone changed. The recording is saved.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Микрофон изменился. Запись сохранена."
+          }
+        }
+      }
+    },
+    "The microphone uses an unsupported audio format.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Микрофон использует неподдерживаемый формат звука."
+          }
+        }
+      }
+    },
+    "The on-device model is still getting ready.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель на этом Mac ещё готовится."
+          }
+        }
+      }
+    },
+    "The recording is empty or unreadable.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись пустая или не читается."
+          }
+        }
+      }
+    },
+    "The recording is over 24 MB. Record a shorter one.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись больше 24 МБ. Запишите покороче."
+          }
+        }
+      }
+    },
+    "The selected microphone isn’t available.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбранный микрофон недоступен."
+          }
+        }
+      }
+    },
+    "The speech model didn’t download.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель распознавания не скачалась."
+          }
+        }
+      }
+    },
+    "The speech model downloads once.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель распознавания скачивается один раз."
+          }
+        }
+      }
+    },
+    "This shortcut may already be in use (%d).": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это сочетание, возможно, уже занято (%d)."
+          }
+        }
+      }
+    },
+    "Today": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сегодня"
+          }
+        }
+      }
+    },
+    "Transcribe": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознать"
+          }
+        }
+      }
+    },
+    "Transcribe Again": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознать заново"
+          }
+        }
+      }
+    },
+    "Transcribing": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознаю"
+          }
+        }
+      }
+    },
+    "Transcribing…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознаётся…"
+          }
+        }
+      }
+    },
+    "Try it": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Попробуйте"
+          }
+        }
+      }
+    },
+    "Two permissions": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Два разрешения"
+          }
+        }
+      }
+    },
+    "Unavailable Microphone": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Микрофон недоступен"
+          }
+        }
+      }
+    },
+    "Unknown App": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неизвестное приложение"
+          }
+        }
+      }
+    },
+    "Use Right ⌥": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Использовать правый ⌥"
+          }
+        }
+      }
+    },
+    "VoiceFn dictation status": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Состояние диктовки VoiceFn"
+          }
+        }
+      }
+    },
+    "VoiceFn lives in the menu bar. You can close this window.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceFn живёт в строке меню. Окно можно закрыть."
+          }
+        }
+      }
+    },
+    "VoiceFn needs keyboard access": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceFn нужен доступ к клавиатуре"
+          }
+        }
+      }
+    },
+    "VoiceFn needs microphone access": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceFn нужен доступ к микрофону"
+          }
+        }
+      }
+    },
+    "VoiceFn quit before transcribing.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VoiceFn закрылся до распознавания."
+          }
+        }
+      }
+    },
+    "Yesterday": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вчера"
+          }
+        }
+      }
+    },
+    "Your Mac went to sleep. The recording is saved.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac ушёл в сон. Запись сохранена."
+          }
+        }
+      }
+    },
+    "Your OpenRouter balance is too low.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На балансе OpenRouter недостаточно средств."
+          }
+        }
+      }
+    },
+    "Your text appears here": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Здесь появится ваш текст"
+          }
+        }
+      }
+    },
+    "Your voice is sent to OpenRouter and the model’s provider to become text.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Голос отправляется в OpenRouter и провайдеру модели, чтобы стать текстом."
+          }
+        }
+      }
+    },
+    "audio not saved": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "аудио не сохранилось"
+          }
+        }
+      }
+    },
+    "audio saved": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "аудио сохранено"
+          }
+        }
+      }
+    },
+    "fn also switches your keyboard language": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fn ещё и переключает язык клавиатуры"
+          }
+        }
+      }
+    },
+    "macOS asks only once.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS спросит один раз."
+          }
+        }
+      }
+    },
+    "right ⌥": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "правый ⌥"
+          }
+        }
+      }
+    },
+    "to catch fn and paste text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "чтобы ловить fn и вставлять текст"
+          }
+        }
+      }
+    },
+    "to hear you": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "чтобы слышать вас"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
