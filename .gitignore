@@ -5,5 +5,4 @@ DerivedData/
 *.xcuserstate
 xcuserdata/
 *.xcresult
-/server/server
 .claude/worktrees/

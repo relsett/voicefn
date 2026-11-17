@@ -40,19 +40,3 @@ jobs:
           xcodebuild -project VoiceMacro.xcodeproj -scheme VoiceMacro
           -configuration Release -destination 'generic/platform=macOS'
           -derivedDataPath build/CI CODE_SIGNING_ALLOWED=NO build
-
-  server:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: server
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          persist-credentials: false
-      - name: Test website server
-        run: |
-          test -z "$(gofmt -l .)"
-          go vet ./...
-          go test ./...

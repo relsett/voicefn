@@ -46,7 +46,7 @@ downloads the Whisper model.
 Audio and text never leave the Mac unless you connect OpenRouter. Official builds send anonymous usage
 events to [Aptabase](https://aptabase.com) (event names and small counters, never audio or text; Settings can turn this off); builds
 from source send nothing unless you set the `VOICEFN_TELEMETRY_KEY` build setting.
-Full policy: [voicefn.driftstatic.com/privacy](https://voicefn.driftstatic.com/privacy).
+Full policy: [relsett.github.io/voicefn/privacy](https://relsett.github.io/voicefn/privacy/).
 
 ## Layout
 
@@ -54,7 +54,7 @@ Full policy: [voicefn.driftstatic.com/privacy](https://voicefn.driftstatic.com/p
 | --- | --- |
 | `Sources/VoiceMacro` | the app (SwiftUI + AppKit, sandboxed) |
 | `Tests/VoiceMacroTests` | unit tests |
-| `server` | the small Go website: home, privacy, support |
+| `docs` | the website on GitHub Pages: home, privacy, support |
 | `AppStore` | App Store listing text and screenshot renderer |
 
 Design rules for contributions are in [CLAUDE.md](CLAUDE.md): as little interface as possible.

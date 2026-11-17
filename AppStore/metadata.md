@@ -3,8 +3,8 @@
 Kept here so the listing changes go through review like code. Limits: name and subtitle 30,
 keywords 100 (comma-separated, no spaces), promotional text 170, description 4000.
 
-Shared fields: Privacy Policy URL https://voicefn.driftstatic.com/privacy ·
-Support URL https://voicefn.driftstatic.com/support · Marketing URL https://voicefn.driftstatic.com ·
+Shared fields: Privacy Policy URL https://relsett.github.io/voicefn/privacy/ ·
+Support URL https://relsett.github.io/voicefn/support/ · Marketing URL https://relsett.github.io/voicefn/ ·
 Category Productivity (secondary Utilities) · Price Free · Copyright 2026 Nikolai Kubarov
 
 ## English (U.S.)
@@ -31,7 +31,7 @@ Press fn, speak, press fn again. Your words appear where the cursor is, in any a
 Prefer a cloud model? Connect your own OpenRouter account.
 
 No account, no ads, no tracking.
-Privacy Policy: https://voicefn.driftstatic.com/privacy
+Privacy Policy: https://relsett.github.io/voicefn/privacy/
 Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 ## Russian
@@ -58,7 +58,7 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Хотите облачную модель? Подключите свой аккаунт OpenRouter.
 
 Без аккаунта, рекламы и слежки.
-Политика конфиденциальности: https://voicefn.driftstatic.com/privacy
+Политика конфиденциальности: https://relsett.github.io/voicefn/privacy/
 Условия использования: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 ## App Review notes
