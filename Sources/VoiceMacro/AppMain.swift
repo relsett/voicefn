@@ -33,11 +33,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         #endif
     }
 
+    /// Started by the Relaunch button rather than by the user.
+    private var relaunched = false
+
     func applicationDidFinishLaunching(_ notification: Notification) {
+        relaunched = !smokeMode && RelaunchMarker.consume()
         if !smokeMode, let identifier = Bundle.main.bundleIdentifier,
            let other = NSRunningApplication.runningApplications(withBundleIdentifier: identifier)
             .first(where: { $0.processIdentifier != ProcessInfo.processInfo.processIdentifier }),
-           !Self.waitForRelaunchedPredecessor(other) {
+           !(relaunched && Self.waitForPredecessor(other)) {
             other.activate()
             DistributedNotificationCenter.default().postNotificationName(.init("local.voicemacro.showSettings"), object: nil)
             NSApp.terminate(nil)
@@ -78,8 +82,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             #endif
         } else if !UserDefaults.standard.bool(forKey: Self.onboardingKey) {
             // Relaunched for keyboard access: back to the permissions step.
-            showOnboarding(step: CommandLine.arguments.contains("--relaunched") ? 1 : 0)
-        } else if CommandLine.arguments.contains("--settings") || CommandLine.arguments.contains("--relaunched") {
+            showOnboarding(step: relaunched ? 1 : 0)
+        } else if CommandLine.arguments.contains("--settings") || relaunched {
             showSettings()
         }
     }
@@ -272,8 +276,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// A relaunch for keyboard access starts this process while the old one is still quitting;
     /// waiting for it keeps the new instance from mistaking it for a second copy and quitting too.
-    private static func waitForRelaunchedPredecessor(_ other: NSRunningApplication) -> Bool {
-        guard CommandLine.arguments.contains("--relaunched") else { return false }
+    private static func waitForPredecessor(_ other: NSRunningApplication) -> Bool {
         let deadline = Date().addingTimeInterval(5)
         while !other.isTerminated && Date() < deadline {
             RunLoop.current.run(until: Date().addingTimeInterval(0.1))

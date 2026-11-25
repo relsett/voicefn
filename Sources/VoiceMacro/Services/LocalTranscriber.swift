@@ -58,6 +58,8 @@ final class LocalTranscriber: ObservableObject {
     /// Downloads the model if needed and loads it. Safe to call repeatedly.
     func prepare() {
         guard preparation == nil, pipe == nil else { return }
+        // Set now, so a dictation waiting on the model never sees a stale failure.
+        state = modelFolder == nil ? .downloading(0) : .preparing
         preparation = Task { [weak self] in
             await self?.runPreparation()
             self?.preparation = nil
@@ -110,9 +112,15 @@ final class LocalTranscriber: ObservableObject {
     }
 
     private func transcribeNow(fileURL: URL) async throws -> String {
+        // Right after launch the model is still loading: the recording waits for it instead of failing.
         if pipe == nil {
             prepare()
-            throw LocalTranscriberError.notReady
+            for await state in $state.values {
+                if case .downloading = state { continue }
+                if state == .preparing { continue }
+                break
+            }
+            try Task.checkCancellation()
         }
         guard let pipe else { throw LocalTranscriberError.notReady }
         // Decoding and resampling minutes of audio must not block the hotkey or the overlay.
@@ -179,6 +187,6 @@ enum LocalTranscriberError: LocalizedError {
     case notReady
 
     var errorDescription: String? {
-        String(localized: "The on-device model is still getting ready.")
+        String(localized: "Model Didn’t Load")
     }
 }
