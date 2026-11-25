@@ -681,6 +681,16 @@
         }
       }
     },
+    "Preparing model": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готовлю модель"
+          }
+        }
+      }
+    },
     "Preparing the speech model…": {
       "localizations": {
         "ru": {
@@ -1007,16 +1017,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Микрофон использует неподдерживаемый формат звука."
-          }
-        }
-      }
-    },
-    "The on-device model is still getting ready.": {
-      "localizations": {
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Модель на этом Mac ещё готовится."
           }
         }
       }

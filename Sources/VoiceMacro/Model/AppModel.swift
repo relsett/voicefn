@@ -43,6 +43,7 @@ final class AppModel: ObservableObject {
     @Published private(set) var fnSwitchesInputSource = false
     /// macOS has delivered at least one press of the trigger key since it was chosen.
     @Published private(set) var triggerKeySeen = false
+    @Published private(set) var localModelReady = true
 
     var onShowOverlay: (() -> Void)?
     var onHideOverlay: (() -> Void)?
@@ -117,6 +118,8 @@ final class AppModel: ObservableObject {
         if systemIntegrationEnabled {
             settings.$engine.dropFirst().filter { $0 == .local }
                 .sink { _ in LocalTranscriber.standard.prepare() }.store(in: &cancellables)
+            LocalTranscriber.standard.$state.map { $0 == .ready }.removeDuplicates()
+                .sink { [weak self] in self?.localModelReady = $0 }.store(in: &cancellables)
         }
         settings.$trigger.combineLatest(settings.$shortcut)
             .dropFirst()
@@ -134,6 +137,11 @@ final class AppModel: ObservableObject {
             refreshDevices()
             configureHotkeys()
         }
+    }
+
+    /// A local dictation is done and waits for the model, which is still loading after launch.
+    var waitingForModel: Bool {
+        (phase == .stopping || phase == .transcribing) && capturedEngine == .local && !localModelReady
     }
 
     var canRetry: Bool { hasSavedRecording && [.failed, .interrupted].contains(phase) }
@@ -570,11 +578,14 @@ final class AppModel: ObservableObject {
     }
 
     func relaunch() {
+        RelaunchMarker.set()
         let configuration = NSWorkspace.OpenConfiguration()
         configuration.createsNewApplicationInstance = true
-        configuration.arguments = ["--relaunched"]
-        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { _, _ in
-            DispatchQueue.main.async { NSApp.terminate(nil) }
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { app, _ in
+            DispatchQueue.main.async {
+                // Quit only once the new copy is running; otherwise keep this one.
+                if app != nil { NSApp.terminate(nil) } else { RelaunchMarker.clear() }
+            }
         }
     }
 

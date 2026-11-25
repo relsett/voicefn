@@ -32,10 +32,12 @@ final class OverlayController {
     init(model: AppModel, isOnActiveSpace: @escaping @MainActor (StatusPanel) -> Bool = { $0.isOnActiveSpace }) {
         self.model = model
         self.isOnActiveSpace = isOnActiveSpace
-        phaseSubscription = model.$phase.removeDuplicates().sink { [weak self] phase in
-            guard let self, !self.showingPreview else { return }
-            self.resize(for: phase)
-        }
+        phaseSubscription = model.$phase.removeDuplicates().combineLatest(model.$localModelReady.removeDuplicates())
+            .sink { [weak self] phase, _ in
+                guard let self, !self.showingPreview else { return }
+                // Published values arrive before they are stored; read the model on the next turn.
+                DispatchQueue.main.async { if !self.showingPreview { self.resize(for: self.model.phase) } }
+            }
         observers.append(NSWorkspace.shared.notificationCenter.addObserver(
             forName: NSWorkspace.activeSpaceDidChangeNotification, object: nil, queue: .main
         ) { [weak self] _ in
@@ -184,7 +186,9 @@ final class OverlayController {
 
 
     private func resize(for phase: DictationPhase) {
-        panel?.setContentSize(NSSize(width: RecordingOverlay.width(for: phase) + 16, height: RecordingOverlay.height + 16))
+        let waiting = !showingPreview && model.waitingForModel
+        panel?.setContentSize(NSSize(width: RecordingOverlay.width(for: phase, waitingForModel: waiting) + 16,
+                                     height: RecordingOverlay.height + 16))
         position()
         panel?.invalidateShadow()
     }
@@ -248,8 +252,10 @@ struct RecordingOverlay: View {
     /// The last 30 seconds before the 5-minute limit show the clock instead of the bars.
     private var nearLimit: Bool { !preview && phase == .recording && model.elapsed >= 270 }
 
-    static func width(for phase: DictationPhase) -> CGFloat {
-        phase == .failed || phase == .interrupted ? 156 : 52
+    private var waitingForModel: Bool { !preview && model.waitingForModel }
+
+    static func width(for phase: DictationPhase, waitingForModel: Bool = false) -> CGFloat {
+        phase == .failed || phase == .interrupted || waitingForModel ? 156 : 52
     }
 
     var body: some View {
@@ -263,7 +269,7 @@ struct RecordingOverlay: View {
                 closeButton.opacity(hovering ? 1 : 0)
             }
         }
-        .frame(width: Self.width(for: phase), height: Self.height)
+        .frame(width: Self.width(for: phase, waitingForModel: waitingForModel), height: Self.height)
         // The window draws the shadow from this shape; a SwiftUI shadow here would leave a
         // translucent halo around the capsule.
         .background(.ultraThinMaterial, in: Capsule())
@@ -271,6 +277,7 @@ struct RecordingOverlay: View {
         .onHover { hovering = $0 }
         .animation(reduceMotion ? nil : .easeOut(duration: 0.16), value: hovering)
         .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: phase)
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: waitingForModel)
         .help(preview ? phase.title : (model.message.isEmpty ? phase.title : model.message))
         .accessibilityElement(children: .contain)
         .environment(\.colorScheme, .dark)
@@ -296,7 +303,18 @@ struct RecordingOverlay: View {
                 .accessibilityLabel(Text("Recording, \(time)"))
             }
         case .stopping, .transcribing:
-            spinner.accessibilityElement(children: .ignore).accessibilityLabel(Text("Transcribing"))
+            if waitingForModel {
+                HStack(spacing: 8) {
+                    spinner
+                    Text("Preparing model")
+                }
+                .font(.system(size: 12, weight: .medium))
+                .foregroundStyle(Self.paper)
+                .lineLimit(1)
+                .accessibilityElement(children: .combine)
+            } else {
+                spinner.accessibilityElement(children: .ignore).accessibilityLabel(Text("Transcribing"))
+            }
         case .delivered:
             Image(systemName: manualPaste ? "doc.on.clipboard" : "checkmark")
                 .font(.system(size: 14, weight: .semibold))
