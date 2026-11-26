@@ -138,7 +138,7 @@ private final class Fixture {
             startRecording: { _ in }, stopRecording: { throw unexpected() },
             cancelRecording: {}, apiKey: { throw unexpected() },
             transcribe: { _, _, _, _ in throw unexpected() }, captureTarget: { nil },
-            deliver: { _, _, _ in XCTFail("Unexpected delivery"); return .copied }, copy: { _ in XCTFail("Unexpected copy") }
+            deliver: { _, _, _, _ in XCTFail("Unexpected delivery"); return .copied }, copy: { _ in XCTFail("Unexpected copy") }
         )
         model = AppModel(systemIntegrationEnabled: false, defaults: defaults, operations: operations)
         overlay = OverlayController(model: model, isOnActiveSpace: isOnActiveSpace)

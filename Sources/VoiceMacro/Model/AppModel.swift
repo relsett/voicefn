@@ -22,8 +22,11 @@ final class AppModel: ObservableObject {
         },
         transcribeLocally: { url in try await LocalTranscriber.standard.transcribe(fileURL: url) },
         captureTarget: { [unowned self] in await self.delivery.captureTarget() },
-        deliver: { [unowned self] text, target, autoPaste in await self.delivery.deliver(text, to: target, autoPaste: autoPaste) },
-        copy: { [unowned self] text in self.delivery.copy(text) }
+        captureClipboard: { [unowned self] in self.delivery.clipboard.capture() },
+        deliver: { [unowned self] text, target, autoPaste, snapshot in
+            await self.delivery.deliver(text, to: target, autoPaste: autoPaste, restoring: snapshot)
+        },
+        copy: { [unowned self] text in self.delivery.clipboard.copy(text) }
     )
 
     @Published private(set) var phase: DictationPhase = .idle
@@ -58,6 +61,7 @@ final class AppModel: ObservableObject {
     private var startedAt: Date?
     private var fileURL: URL?
     private var target: TextTarget?
+    private var clipboardAtStart: DictationClipboard.Snapshot?
     private var capturedModel = ""
     private var capturedEngine: TranscriptionEngine = .local
     private var capturedMode: TranscriptionMode = .audioChat
@@ -176,6 +180,7 @@ final class AppModel: ObservableObject {
         captureEngine()
         capturedAutoPaste = true
         target = nil
+        clipboardAtStart = operations.captureClipboard()
         journalID = nil
         logSession = String(UUID().uuidString.prefix(8))
         logAttempts = 0
@@ -269,6 +274,7 @@ final class AppModel: ObservableObject {
                 if send && self.state.stopHoldReason == nil {
                     await self.sendRecording(session: session)
                 } else {
+                    self.clipboardAtStart = nil
                     self.message = self.state.stopHoldReason ?? String(localized: "Recording saved. Send it or delete it.")
                     self.recordJournalFailure(self.message)
                     self.transition(.interrupted, session)
@@ -293,6 +299,7 @@ final class AppModel: ObservableObject {
         publishPhase()
         message = ""
         captureEngine()
+        clipboardAtStart = operations.captureClipboard()
         sendOrigin = .now
         telemetry?.track("retry")
         task = Task { [weak self] in await self?.sendRecording(session: session) }
@@ -300,6 +307,8 @@ final class AppModel: ObservableObject {
 
     private func sendRecording(session: UUID) async {
         guard state.accepts(session), let fileURL else { return }
+        let clipboard = clipboardAtStart
+        clipboardAtStart = nil
         let origin = sendOrigin ?? .now
         let trace = TranscriptionTrace()
         var entry = makeLogEntry(fileURL: fileURL, origin: origin)
@@ -338,7 +347,7 @@ final class AppModel: ObservableObject {
                 journal?.complete(journalID, text: clean, model: capturedModel, keepAudio: settings.keepRecordings)
             }
             let delivering = ContinuousClock.now
-            let outcome = await operations.deliver(clean, target, capturedAutoPaste)
+            let outcome = await operations.deliver(clean, target, capturedAutoPaste, clipboard)
             entry.deliverMs = (ContinuousClock.now - delivering).milliseconds
             entry.outcome = String(describing: outcome)
             entry.result = "delivered"
@@ -658,6 +667,7 @@ final class AppModel: ObservableObject {
 
     private func fail(_ detail: String, session: UUID) {
         stopClock()
+        clipboardAtStart = nil
         message = detail
         recordJournalFailure(detail)
         // A retry may fail to load credentials while already in failed/interrupted state.
@@ -738,6 +748,7 @@ final class AppModel: ObservableObject {
     private func discardFile() {
         if let fileURL, !journalOwnsFile { try? FileManager.default.removeItem(at: fileURL) }
         fileURL = nil
+        clipboardAtStart = nil
         journalOwnsFile = false
         hasSavedRecording = false
     }
@@ -760,7 +771,8 @@ struct AppModelOperations {
     let transcribe: (URL, String, String, TranscriptionMode) async throws -> String
     var transcribeLocally: (URL) async throws -> String = { _ in throw LocalTranscriberError.notReady }
     let captureTarget: () async -> TextTarget?
-    let deliver: (String, TextTarget?, Bool) async -> DeliveryOutcome
+    var captureClipboard: () -> DictationClipboard.Snapshot? = { nil }
+    let deliver: (String, TextTarget?, Bool, DictationClipboard.Snapshot?) async -> DeliveryOutcome
     let copy: (String) -> Void
 }
 

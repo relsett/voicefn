@@ -9,6 +9,7 @@ Press fn, speak, press fn again. Your words appear where the cursor is, in any a
 - **Or your own cloud model.** Connect your [OpenRouter](https://openrouter.ai) account and pick a model;
   audio then goes straight from your Mac to OpenRouter, with your key.
 - **Any app.** VoiceFn types into whatever is in front: mail, chat, notes, a code editor, a browser.
+  After an automatic paste, VoiceFn restores the previous clipboard contents.
 - **Your key.** fn by default; right Option or any shortcut if you prefer.
 - **History.** Dictations stay on your Mac, and a recording that didn't go through can be sent again.
 - **Quiet.** A small capsule while you speak and a menu bar icon, nothing else.

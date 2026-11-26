@@ -640,7 +640,7 @@ private final class MockEffects {
                 return try localResult.get()
             },
             captureTarget: { nil },
-            deliver: { [self] text, _, autoPaste in
+            deliver: { [self] text, _, autoPaste, _ in
                 delivered.append(text)
                 autoPasteRequests.append(autoPaste)
                 return .copied

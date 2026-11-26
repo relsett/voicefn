@@ -22,6 +22,7 @@ enum DeliveryOutcome: Equatable {
 
 @MainActor
 final class TextDelivery {
+    let clipboard = DictationClipboard()
     private var captureDiagnostic: [String: String] = [:]
 
     /// Text from a model is pasted into whatever app is in front, a terminal included, so it
@@ -62,11 +63,14 @@ final class TextDelivery {
         return probe.target
     }
 
-    func deliver(_ text: String, to target: TextTarget?, autoPaste: Bool) async -> DeliveryOutcome {
-        copy(text)
+    func deliver(_ text: String, to target: TextTarget?, autoPaste: Bool,
+                 restoring snapshot: DictationClipboard.Snapshot?) async -> DeliveryOutcome {
         let originalCapture = captureDiagnostic
         var outcome = DeliveryOutcome.copied
-        defer { saveDiagnostic(outcome: outcome, autoPaste: autoPaste, originalCapture: originalCapture) }
+        defer {
+            if outcome != .pasted && !Task.isCancelled { clipboard.copy(text) }
+            saveDiagnostic(outcome: outcome, autoPaste: autoPaste, originalCapture: originalCapture)
+        }
         guard autoPaste else { return outcome }
         guard SystemAccess.canPostEvents else { outcome = .accessibilityRequired; return outcome }
         guard let target else { outcome = .unsupportedTarget; return outcome }
@@ -88,9 +92,14 @@ final class TextDelivery {
         }
         down.flags = .maskCommand
         up.flags = .maskCommand
-        // AX IPC above can take time; recheck the foreground immediately before posting.
+        let clipboardToRestore = clipboard.snapshotForPaste(snapshot)
+        // AX IPC and clipboard reads can take time; recheck the foreground before posting.
         guard NSWorkspace.shared.frontmostApplication?.processIdentifier == target.processID else {
             outcome = .targetChanged
+            return outcome
+        }
+        guard clipboard.writeForPaste(text, restoring: clipboardToRestore) else {
+            outcome = .eventUnavailable
             return outcome
         }
         down.post(tap: .cghidEventTap)
@@ -105,11 +114,6 @@ final class TextDelivery {
         case let (first?, second?): return CFEqual(first, second)
         default: return false
         }
-    }
-
-    func copy(_ text: String) {
-        NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString(text, forType: .string)
     }
 
     private func saveDiagnostic(outcome: DeliveryOutcome, autoPaste: Bool, originalCapture: [String: String]) {
